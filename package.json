@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://huahai17.github.io/BasketballTrain",
+  "homepage": "https://jianingli328-arch.github.io/BasketballTrain",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
