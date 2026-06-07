@@ -1,289 +1,173 @@
-# ÀºÇòÑµÁ·³É³¤¼ÇÂ¼ ¡ª ÏîÄ¿¼ÇÒä
+ï»¿# ç¯®çƒè®­ç»ƒæˆé•¿è®°å½• â€” é¡¹ç›®è®°å¿†
 
-> ×îºó¸üĞÂ£º2026-06-04
-> ¹¹½¨×´Ì¬£º? EAS APK ¹¹½¨³É¹¦
-
----
-
-## ÏîÄ¿¼ò½é
-
-ÀºÇòÔËÇòÑµÁ·¼ÇÂ¼ App£¬°ïÖúÇòÔ±¼ÇÂ¼Ã¿ÈÕÑµÁ·¶¯×÷¡¢×éÊı¡¢´ÎÊı/Ê±³¤£¬¸ú×ÙÑµÁ·½ø¶È¡£
-
-Ö§³ÖËÄ´óÑµÁ··ÖÀà£º**Ô­µØÔËÇò**¡¢**ĞĞ½ø¼ä×éºÏ**¡¢**ÔËÇòÖÕ½á**¡¢**Í¶Àº**¡£
+> æœ€åæ›´æ–°ï¼š2026-06-07
+> æ„å»ºçŠ¶æ€ï¼šâœ… GitHub Pages å·²ä¸Šçº¿
+> åœ¨çº¿åœ°å€ï¼š[jianingli328-arch.github.io/BasketballTrain](https://jianingli328-arch.github.io/BasketballTrain/)
 
 ---
 
-## ¼¼ÊõÕ»
+## é¡¹ç›®ç®€ä»‹
 
-| ²ã | Ñ¡ĞÍ |
+ç¯®çƒè®­ç»ƒè®°å½• Web Appï¼Œå¸®åŠ©çƒå‘˜è®°å½•æ¯æ—¥è®­ç»ƒåŠ¨ä½œã€ç»„æ•°ã€æ¬¡æ•°/æ—¶é•¿ï¼Œè·Ÿè¸ªè®­ç»ƒè¿›åº¦ã€‚
+
+æ”¯æŒå››å¤§è®­ç»ƒåˆ†ç±»ï¼š**åŸåœ°è¿çƒ**ã€**è¡Œè¿›é—´ç»„åˆ**ã€**è¿çƒç»ˆç»“**ã€**æŠ•ç¯®**ã€‚
+
+---
+
+## æŠ€æœ¯æ ˆ
+
+| å±‚ | é€‰å‹ |
 |---|---|
-| ¿ò¼Ü | Expo SDK 56 |
-| Â·ÓÉ | expo-router (ÎÄ¼şÂ·ÓÉ) |
-| UI | React Native (0.85.3) |
-| ÓïÑÔ | TypeScript (5.9.3) |
-| ´æ´¢ | @react-native-async-storage/async-storage (±¾µØ JSON) |
-| µ¼º½ | @react-navigation/bottom-tabs |
-| ¹¹½¨ | EAS Build (ÔÆ¶Ë APK/AAB) |
+| æ¡†æ¶ | Vite 6 + React 19 |
+| è·¯ç”± | react-router-dom v7 |
+| è¯­è¨€ | TypeScript ~5.7 |
+| å­˜å‚¨ | localStorage (webStorage.ts å°è£…å±‚) |
+| æ ·å¼ | çº¯ CSS å˜é‡ï¼Œæ©™è‰²ä¸»é¢˜ç³» |
+| éƒ¨ç½² | GitHub Pages (gh-pages åˆ†æ”¯) |
+
+> âš ï¸ **é¡¹ç›®æ¼”è¿›è¯´æ˜**ï¼šæœ¬é¡¹ç›®æœ€åˆä¸º Expo/React Native Appï¼ˆå« EAS Build APK æ„å»ºï¼‰ï¼Œåè¿ç§»ä¸ºçº¯ Web ç‰ˆï¼ˆVite + Reactï¼‰ã€‚ç°åœ¨åªæœ‰ Web ç‰ˆåœ¨ç»´æŠ¤ã€‚
 
 ---
 
-## Ä¿Â¼½á¹¹
+## ç›®å½•ç»“æ„
 
 ```
 BasketballTrain/
-©À©¤©¤ app/                    # Ò³ÃæÂ·ÓÉ (expo-router ÎÄ¼şÂ·ÓÉ)
-©¦   ©À©¤©¤ (tabs)/             # µ×²¿ Tab Ò³Ãæ
-©¦   ©¦   ©À©¤©¤ _layout.tsx     # Tab ²¼¾Ö (4¸ö tab)
-©¦   ©¦   ©À©¤©¤ index.tsx       # ?? Ê×Ò³ - ÑµÁ·¸ÅÀÀ
-©¦   ©¦   ©À©¤©¤ exercises.tsx   # ?? ¶¯×÷¿â
-©¦   ©¦   ©À©¤©¤ stats.tsx       # ?? Í³¼Æ
-©¦   ©¦   ©¸©¤©¤ profile.tsx     # ?? ÎÒµÄ(ÉèÖÃ)
-©¦   ©À©¤©¤ session/
-©¦   ©¦   ©À©¤©¤ new.tsx         # ĞÂ½¨ÑµÁ· (modal)
-©¦   ©¦   ©¸©¤©¤ [id].tsx        # ÑµÁ·ÏêÇé
-©¦   ©¸©¤©¤ _layout.tsx         # ¸ù²¼¾Ö (Stack)
-©¦
-©À©¤©¤ src/
-©¦   ©À©¤©¤ components/         # ¿É¸´ÓÃ UI ×é¼ş
-©¦   ©¦   ©À©¤©¤ ExerciseCard.tsx
-©¦   ©¦   ©À©¤©¤ SetRecordEditor.tsx
-©¦   ©¦   ©¸©¤©¤ StatCard.tsx
-©¦   ©À©¤©¤ data/
-©¦   ©¦   ©¸©¤©¤ seedExercises.ts    # Ä¬ÈÏ¶¯×÷ÖÖ×ÓÊı¾İ (17¸ö¶¯×÷)
-©¦   ©À©¤©¤ storage/                # AsyncStorage Êı¾İ²ã
-©¦   ©¦   ©À©¤©¤ exerciseStorage.ts  # ¶¯×÷ CRUD
-©¦   ©¦   ©À©¤©¤ workoutStorage.ts   # ÑµÁ·/×é¼ÇÂ¼ CRUD
-©¦   ©¦   ©À©¤©¤ settingsStorage.ts  # ÉèÖÃ³Ö¾Ã»¯
-©¦   ©¦   ©À©¤©¤ storageKeys.ts      # Storage key ³£Á¿
-©¦   ©¦   ©¸©¤©¤ index.ts
-©¦   ©À©¤©¤ theme/
-©¦   ©¦   ©À©¤©¤ colors.ts           # Ö÷ÌâÉ« (³ÈÉ«Ïµ #E65100)
-©¦   ©¦   ©¸©¤©¤ spacing.ts          # ¼ä¾à/×ÖºÅ/Ô²½Ç³£Á¿
-©¦   ©À©¤©¤ types/
-©¦   ©¦   ©À©¤©¤ exercise.ts         # Exercise / ExerciseUnitType
-©¦   ©¦   ©À©¤©¤ workout.ts          # WorkoutSession / WorkoutItem / SetRecord
-©¦   ©¦   ©À©¤©¤ settings.ts         # Settings ÀàĞÍ
-©¦   ©¦   ©¸©¤©¤ index.ts
-©¦   ©¸©¤©¤ utils/
-©¦       ©À©¤©¤ date.ts             # ÈÕÆÚ¸ñÊ½»¯¡¢ÖÜ/ÔÂ·¶Î§¼ÆËã
-©¦       ©À©¤©¤ id.ts               # ID Éú³É
-©¦       ©¸©¤©¤ stats.ts            # Í³¼Æ¼ÆËã (ÖÜ/ÔÂ/Äê)
-©¦
-©À©¤©¤ plugins/                # (ÒÑ·ÏÆú) ×Ô¶¨Òå Expo ²å¼ş
-©¦   ©À©¤©¤ withKotlinVersion.js
-©¦   ©¸©¤©¤ withGradleVersion.js
-©¦
-©À©¤©¤ scripts/
-©¦   ©¸©¤©¤ prebuild.js         # (ÒÑ·ÏÆú) ×Ô¶¨Òå prebuild ½Å±¾
-©¦
-©À©¤©¤ app.json                # Expo Ö÷ÅäÖÃ
-©À©¤©¤ eas.json                # EAS Build ÅäÖÃ
-©À©¤©¤ package.json
-©¸©¤©¤ tsconfig.json
+â”œâ”€â”€ src/
+â”‚   â”œâ”€â”€ App.tsx                    # æ ¹ç»„ä»¶ + è·¯ç”± + åº•éƒ¨ Tab å¯¼èˆª
+â”‚   â”œâ”€â”€ main.tsx                   # ReactDOM å…¥å£
+â”‚   â”œâ”€â”€ index.css                  # å…¨å±€æ ·å¼ + CSS å˜é‡
+â”‚   â”œâ”€â”€ components/
+â”‚   â”‚   â”œâ”€â”€ ExerciseCard.tsx       # åŠ¨ä½œå¡ç‰‡
+â”‚   â”‚   â”œâ”€â”€ SetRecordEditor.tsx    # ç»„è®°å½•ç¼–è¾‘å™¨
+â”‚   â”‚   â”œâ”€â”€ StatCard.tsx           # ç»Ÿè®¡æ•°æ®å¡ç‰‡
+â”‚   â”‚   â”œâ”€â”€ TrainingCalendar.tsx   # è®­ç»ƒæ—¥å†ç»„ä»¶
+â”‚   â”‚   â””â”€â”€ WorkoutTimer.tsx       # è®­ç»ƒè®¡æ—¶å™¨
+â”‚   â”œâ”€â”€ pages/
+â”‚   â”‚   â”œâ”€â”€ HomePage.tsx           # é¦–é¡µ - è®­ç»ƒæ¦‚è§ˆ + å‘¨è¿›åº¦
+â”‚   â”‚   â”œâ”€â”€ ExercisesPage.tsx      # åŠ¨ä½œåº“ç®¡ç†
+â”‚   â”‚   â”œâ”€â”€ StatsPage.tsx          # è®­ç»ƒç»Ÿè®¡ï¼ˆæ€»/å‘¨/æœˆ/å¹´ + æŠ•ç¯®å‘½ä¸­ + åˆ†ç±»ï¼‰
+â”‚   â”‚   â”œâ”€â”€ ProfilePage.tsx        # æˆ‘çš„ï¼ˆè®¾ç½®ï¼‰
+â”‚   â”‚   â”œâ”€â”€ NewSessionPage.tsx     # æ–°å»ºè®­ç»ƒï¼ˆå«è®¡æ—¶å™¨ï¼‰
+â”‚   â”‚   â””â”€â”€ SessionDetailPage.tsx  # è®­ç»ƒè¯¦æƒ…ä¸ç¼–è¾‘
+â”‚   â”œâ”€â”€ storage/
+â”‚   â”‚   â”œâ”€â”€ webStorage.ts          # localStorage CRUD å°è£…ï¼ˆSession/Item/Set/Exercise/Settingsï¼‰
+â”‚   â”‚   â””â”€â”€ index.ts
+â”‚   â”œâ”€â”€ theme/
+â”‚   â”‚   â”œâ”€â”€ colors.ts              # ä¸»é¢˜è‰²å¸¸é‡ #E65100
+â”‚   â”‚   â””â”€â”€ spacing.ts             # é—´è·/å­—å·/åœ†è§’å¸¸é‡
+â”‚   â”œâ”€â”€ types/
+â”‚   â”‚   â”œâ”€â”€ exercise.ts            # Exercise / ExerciseUnitType
+â”‚   â”‚   â”œâ”€â”€ workout.ts             # WorkoutSession / WorkoutItem / SetRecord
+â”‚   â”‚   â”œâ”€â”€ settings.ts            # Settings ç±»å‹
+â”‚   â”‚   â””â”€â”€ index.ts
+â”‚   â””â”€â”€ utils/
+â”‚       â”œâ”€â”€ date.ts                # æ—¥æœŸæ ¼å¼åŒ–ã€å‘¨/æœˆ/å¹´èŒƒå›´è®¡ç®—
+â”‚       â”œâ”€â”€ id.ts                  # ID ç”Ÿæˆ (nanoid)
+â”‚       â””â”€â”€ stats.ts               # ç»Ÿè®¡è®¡ç®—ï¼ˆå‘¨/æœˆ/å¹´/åˆ†ç±»/æŠ•ç¯®ï¼‰
+â”‚
+â”œâ”€â”€ index.html                     # Vite å…¥å£ HTML
+â”œâ”€â”€ vite.config.ts                 # Vite é…ç½®ï¼ˆbase: /BasketballTrain/ï¼‰
+â”œâ”€â”€ package.json                   # ä¾èµ– + deploy è„šæœ¬
+â”œâ”€â”€ tsconfig.json
+â””â”€â”€ MEMORY.md                      # æœ¬æ–‡ä»¶
 ```
 
 ---
 
-## ºËĞÄÊı¾İÀàĞÍ
+## æ ¸å¿ƒæ•°æ®ç±»å‹
 
-### Exercise£¨¶¯×÷£©
+### Exerciseï¼ˆåŠ¨ä½œï¼‰
 ```typescript
 type ExerciseUnitType = "reps" | "seconds" | "made_attempts" | "weight_reps"
 
 type Exercise = {
-  id: string
-  name: string
-  category: string        // ËÄ¸ö·ÖÀàÖ®Ò»
-  unitType: ExerciseUnitType  // ¼ÆÁ¿µ¥Î»ÀàĞÍ
-  defaultSets: number     // Ä¬ÈÏ×éÊı
-  defaultTarget: number   // Ä¬ÈÏÃ¿×éÄ¿±ê
-  note: string
-  archived: boolean
-  createdAt: number
-  updatedAt: number
+  id: string; name: string; category: string;
+  unitType: ExerciseUnitType;
+  defaultSets: number; defaultTarget: number;
+  note: string; archived: boolean;
+  createdAt: number; updatedAt: number;
 }
 ```
 
-### WorkoutSession£¨ÑµÁ·»á»°£©
-```typescript
-type WorkoutSession = {
-  id: string
-  date: string            // "YYYY-MM-DD"
-  startTime: number
-  endTime: number | null
-  durationMinutes: number
-  location: string
-  focus: string[]
-  overallRpe: number | null
-  note: string
-}
-```
-
-### WorkoutItem£¨ÑµÁ·Ïî£©& SetRecord£¨×é¼ÇÂ¼£©
+### WorkoutSessionã€WorkoutItemã€SetRecord
 ```
 Session 1:N WorkoutItem 1:N SetRecord
 ```
+WorkoutSession åŒ…å«æ—¥æœŸã€å¼€å§‹/ç»“æŸæ—¶é—´ã€æ—¶é•¿ã€ä½ç½®ã€è®­ç»ƒé‡ç‚¹ã€RPEã€å¤‡æ³¨ã€‚
+WorkoutItem å…³è”ç»ƒä¹ åŠ¨ä½œï¼ŒSetRecord å­˜å‚¨æ¯ç»„çš„å…·ä½“æ•°æ®ã€‚
 
 ---
 
-## Ô¤Éè¶¯×÷¿â£¨17¸ö£©
+## é¢„è®¾åŠ¨ä½œåº“ï¼ˆ16ä¸ªï¼‰
 
-| ·ÖÀà | ¶¯×÷ |
+| åˆ†ç±» | åŠ¨ä½œ |
 |---|---|
-| **Ô­µØÔËÇò** | V×ÖÔËÇò¡¢±äÏòÔËÇò¡¢¿èÏÂÔËÇò¡¢±³ºóÔËÇò |
-| **ĞĞ½ø¼ä×éºÏ** | ±äÏò¿èÏÂ¡¢¿èÏÂ±³ºó¡¢±äÏò¿èÏÂ±³ºó |
-| **ÔËÇòÖÕ½á** | ±äÏòµÍÊÖÉÏÀº¡¢¿èÏÂµÍºÏÇòÉÏÀº¡¢±³ºó·´Àº¡¢×ªÉíÅ·ÖŞ²½ÉÏÀº |
-| **Í¶Àº** | ÖĞ¾àÀë×ÔÍ¶×Ô¼ñ¡¢45¡ã´ò°åÖĞ¾àÀë¡¢ĞĞ½ø¼äÅ×Í¶¡¢Èı·ÖÇò¡¢¼±Í£ÌøÍ¶ |
+| **åŸåœ°è¿çƒ** | Vå­—è¿çƒã€å˜å‘è¿çƒã€èƒ¯ä¸‹è¿çƒã€èƒŒåè¿çƒ |
+| **è¡Œè¿›é—´ç»„åˆ** | å˜å‘èƒ¯ä¸‹ã€èƒ¯ä¸‹èƒŒåã€å˜å‘èƒ¯ä¸‹èƒŒå |
+| **è¿çƒç»ˆç»“** | å˜å‘ä½æ‰‹ä¸Šç¯®ã€èƒ¯ä¸‹ä½åˆçƒä¸Šç¯®ã€èƒŒååç¯®ã€è½¬èº«æ¬§æ´²æ­¥ä¸Šç¯® |
+| **æŠ•ç¯®** | ä¸­è·ç¦»è‡ªæŠ•è‡ªæ¡ã€45Â°æ‰“æ¿ä¸­è·ç¦»ã€è¡Œè¿›é—´æŠ›æŠ•ã€ä¸‰åˆ†çƒã€æ€¥åœè·³æŠ• |
 
 ---
 
-## ¹¹½¨Óë²¿Êğ
+## åŠŸèƒ½æ¸…å•
 
-### ±¾µØ¿ª·¢
+| åŠŸèƒ½ | çŠ¶æ€ |
+|------|------|
+| 4 Tab å¯¼èˆªï¼ˆè®­ç»ƒ/åŠ¨ä½œåº“/ç»Ÿè®¡/æˆ‘çš„ï¼‰ | âœ… |
+| æ–°å»ºè®­ç»ƒä¼šè¯ï¼ˆé€‰åŠ¨ä½œ + è®°ç»„æ•° + è®¡æ—¶å™¨ï¼‰ | âœ… |
+| è®­ç»ƒæ—¥å†ï¼ˆæ ‡è®°è®­ç»ƒæ—¥ + ç‚¹å‡»æŸ¥çœ‹å½“å¤©è®­ç»ƒï¼‰ | âœ… |
+| æœ¬å‘¨è®­ç»ƒè¿›åº¦æ¡ï¼ˆç›®æ ‡ vs å®é™…ï¼‰ | âœ… |
+| è®­ç»ƒè¯¦æƒ…é¡µï¼ˆç¼–è¾‘/åˆ é™¤ï¼‰ | âœ… |
+| åŠ¨ä½œåº“ç®¡ç†ï¼ˆæ–°å¢/å½’æ¡£ï¼‰ | âœ… |
+| ç»Ÿè®¡é¡µï¼ˆæ€»æ¬¡æ•°/æ€»æ—¶é•¿/å‘¨/æœˆ/å¹´ + æŠ•ç¯®å‘½ä¸­ç‡ + åˆ†ç±»ç»Ÿè®¡ï¼‰ | âœ… |
+| è®¾ç½®é¡µï¼ˆå‘¨ç›®æ ‡/é»˜è®¤æ—¶é•¿/è®­ç»ƒç›®æ ‡ï¼‰ | âœ… |
+| æ•°æ®æŒä¹…åŒ–ï¼ˆlocalStorageï¼‰ | âœ… |
+| ç§»åŠ¨ç«¯å“åº”å¼ | âœ… |
+| GitHub Pages éƒ¨ç½² | âœ… |
+
+---
+
+## æ„å»ºä¸éƒ¨ç½²
+
+### æœ¬åœ°å¼€å‘
 ```bash
-npm start              # Expo dev server
-npm run web            # Expo Web (ä¯ÀÀÆ÷Ô¤ÀÀ)
-npm run android        # ĞèÒª±¾µØ Android SDK
-```
-
-### EAS ÔÆ¹¹½¨ (APK)
-```bash
-npx eas-cli build --platform android --profile preview
-```
-
-### EAS ÔÆ¹¹½¨ (AAB - Play Store)
-```bash
-npx eas-cli build --platform android --profile production
-```
-
-µ±Ç°Ô¤ÀÀÅäÖÃÔÚ `eas.json` µÄ `preview` profile ÖĞ¡£
-
----
-
-## ¹¹½¨ÀúÊ· & ²È¿Ó¼ÇÂ¼
-
-### 2026-06-04 (µÚ¶ş´Î): ÕæÕıĞŞ¸´ÉÁÍË ¡ª Expo SDK 56 ĞèÒª React 19
-
-**¸ùÒò·ÖÎö£º**
-Ö®Ç°µÄ"ĞŞ¸´"ÎÄµµËµ½µ¼¶ React 18 ºÍ TypeScript 5£¬µ«ÕâÊÇ**´íÎóµÄ**¡£
-
-
-px expo install --fix ½ÒÊ¾ Expo SDK 56 Êµ¼ÊĞèÒªµÄ°æ±¾£º
-
-| °ü | Ö®Ç°°²×°µÄ°æ±¾ | Expo SDK 56 ÆÚÍû°æ±¾ | ĞŞ¸´ºó°æ±¾ |
-|---|---|---|---|
-| react | 18.3.1 ? | 19.2.3 | 19.2.3 ? |
-| react-dom | 18.3.1 ? | 19.2.3 | 19.2.3 ? |
-| react-native-gesture-handler | 3.0.0 ? | ~2.31.1 | 2.31.2 ? |
-| react-native-safe-area-context | 5.8.0 ? | ~5.7.0 | 5.7.0 ? |
-| @react-native-async-storage/async-storage | 3.1.1 ? | 2.2.0 | 2.2.0 ? |
-| typescript | 5.8.0 ? | ~6.0.3 | 6.0.3 ? |
-| @types/react | 18.3.0 ? | ~19.2.14 | 19.2.16 ? |
-
-**¹Ø¼ü½ÌÑµ£º** ÓÀÔ¶²»ÒªÊÖ¶¯½µ¼¶ React °æ±¾ ¡ª ÓÃ 
-px expo install --fix ÈÃ Expo ×Ô¶¯½âÎö¼æÈİ°æ±¾¡£
-
-**ÉÁÍË»úÖÆ£º** TypeError: Cannot read property 'S' of undefined
-- React 18 µÄ Fiber reconciler API Óë React 19 µÄ react-native-renderer ²»¼æÈİ
-- renderApplication µ÷ÓÃ renderElement Ê±£¬Fiber ½ÚµãÈ±ÉÙ S ÊôĞÔ£¨React 19 µÄĞÂÄÚ²¿ÊôĞÔ£©
-- µ¼ÖÂ require() Á´Â·ÉÏ undefined.S ·ÃÎÊÒì³£
-
-**ĞŞ¸´ÃüÁî£º**
-`ash
-npx expo install --fix
-`
-×Ô¶¯Éı¼¶/½µ¼¶ËùÓĞ°üµ½ SDK 56 ¼æÈİ°æ±¾¡£
----
-
-## PATH »·¾³±äÁ¿£¨Windows ×¢Òâ£©
-
-ÓÉÓÚ Codex ×Ô´øµÄ Node.js ÔÚ WindowsApps Ä¿Â¼£¬Ö´ĞĞ npm/npx Ê±ĞèÒªÓÃÒÔÏÂ·½Ê½ÉèÖÃ PATH£º
-
-```powershell
-$env:Path = "C:\Program Files\nodejs;" + ($env:Path -replace 'C:\\Program Files\\WindowsApps[^;]*;?','')
-```
-
-»òÕß°²×° Git ºó¿ÉÒÔÓÃ VCS Ä£Ê½ÔËĞĞ EAS¡£
-
----
-
-## Ğ¡¼¼ÇÉ
-
-- ËùÓĞÊı¾İ´æ´¢ÔÚ AsyncStorage ÖĞ£¬Çå³ı App Êı¾İ»òĞ¶ÔØÖØ×°»á¶ªÊ§¼ÇÂ¼
-- Ö÷ÌâÉ«£º³ÈÉ« `#E65100`£¬²Î¿¼ÁËÀºÇòµÄÅäÉ«
-- µ¥ÔªÀàĞÍ£¨unitType£©¾ö¶¨ÁË SetRecord ÖĞ¼ÇÂ¼µÄ×Ö¶Î£º`reps`¡úactual, `seconds`¡úseconds, `made_attempts`¡úmade/attempts
-
-
----
-
-## ¸üĞÂ App °æ±¾£¨µü´úºóÖØĞÂ°²×°£©
-
-### ·½·¨Ò»£º±¾µØ¹¹½¨ APK£¨ÍÆ¼ö£©
-
-`ash
-# 1. È·±£ÒÀÀµ°²×°ÍêÕû
 npm install
+npm run dev          # Vite dev serverï¼Œé»˜è®¤ http://localhost:5173
+```
 
-# 2. ±¾µØ¹¹½¨ APK£¨ĞèÒª Android SDK£©
-npx expo run:android
+### ç”Ÿäº§æ„å»º
+```bash
+npm run build        # tsc -b && vite build â†’ dist/
+```
 
-# ¹¹½¨Íê³Éºó APK Î»ÖÃ£º
-# android/app/build/outputs/apk/release/app-release.apk
-`
+### éƒ¨ç½²åˆ° GitHub Pages
+```bash
+npm run deploy       # build + gh-pages -d dist â†’ æ¨é€åˆ° gh-pages åˆ†æ”¯
+```
 
-### ·½·¨¶ş£ºEAS ÔÆ¹¹½¨£¨ÎŞĞè±¾µØ SDK£©
-
-`ash
-# Ô¤ÀÀ°æ APK£¨Ö±½Ó°²×°µ½ÊÖ»ú£©
-npx eas-cli build --platform android --profile preview
-
-# ¹¹½¨Íê³Éºó EAS »á·µ»ØÏÂÔØÁ´½Ó
-# ÔÚä¯ÀÀÆ÷´ò¿ªÁ´½ÓÏÂÔØ .apk ÎÄ¼ş
-`
-
-### ·½·¨Èı£º¿ª·¢Ô¤ÀÀ£¨²»¹¹½¨£¬Ö±½ÓÔËĞĞ£©
-
-`ash
-# 1. Æô¶¯¿ª·¢·şÎñÆ÷
-npm start
-
-# 2. ÊÖ»ú°²×° Expo Go App£¨À´×ÔÓ¦ÓÃÉÌµê£©
-# 3. ÓÃ Expo Go É¨ÃèÖÕ¶ËÏÔÊ¾µÄ¶şÎ¬Âë
-# 4. ´úÂëĞŞ¸Ä»áÈÈ¸üĞÂ£¬ÎŞĞèÖØĞÂ°²×°
-
-# ×¢Òâ£ºExpo Go ·½Ê½Êı¾İ´æÓÚÊÖ»ú±¾µØ£¬
-# ÕıÊ½ APK °²×°ºóÔ­ÓĞÊı¾İ²»¹²Ïí
-`
-
-### Éı¼¶Á÷³Ì£¨´Ó¾É°æ APK Éı¼¶£©
-
-1. ÓÃ·½·¨Ò»»ò·½·¨¶şÉú³ÉĞÂµÄ APK
-2. ½« APK ´«µ½ÊÖ»ú£¨Î¢ĞÅ/QQ/ÍøÅÌ/Êı¾İÏßµÈ·½Ê½£©
-3. ÔÚÊÖ»úÉÏµã»÷ APK ÎÄ¼ş°²×°
-4. °²×°Ê±»áÌáÊ¾"¸üĞÂ"£¬È·ÈÏºó¸²¸Ç°²×°
-5. Ô­ÓĞÑµÁ·Êı¾İ±£´æÔÚ AsyncStorage ÖĞ£¬**²»»á¶ªÊ§**
-
-> ?? ×¢Òâ£ºÈç¹û¸ÄÁË Android °üÃû£¨pp.json ÖĞµÄ ndroid.package£©£¬ÏµÍ³»áÈÏÎªÕâÊÇÁ½¸ö²»Í¬µÄ App£¬Êı¾İÒ²ÎŞ·¨¹²Ïí¡£Ä¿Ç°°üÃûÊÇ com.basketballtrain.app£¬±£³Ö²»¶¯¼´¿É¡£
+éƒ¨ç½²é…ç½®è¦ç‚¹ï¼š
+- `vite.config.ts` ä¸­ `base: "/BasketballTrain/"`
+- `package.json` ä¸­ `homepage: "https://jianingli328-arch.github.io/BasketballTrain"`
+- GitHub ä»“åº“ Settings â†’ Pages â†’ Source: `gh-pages` åˆ†æ”¯ `/ (root)`
+- ä»“åº“å¿…é¡»è®¾ä¸º Publicï¼ˆGitHub Pages å…è´¹ç‰ˆä¸æ”¯æŒç§æœ‰ä»“åº“ï¼‰
 
 ---
 
-## °æ±¾ÀúÊ·
+## ç‰ˆæœ¬å†å²
 
-| °æ±¾ | ÈÕÆÚ | ËµÃ÷ |
+| ç‰ˆæœ¬ | æ—¥æœŸ | è¯´æ˜ |
 |------|------|------|
-| v1.0.0 | 2026-06-04 | ³õ°æ£ºÑµÁ·¼ÇÂ¼¡¢¶¯×÷¿â¡¢Í³¼Æ¡¢ÉèÖÃ |
-| v1.1.0 | 2026-06-04 | ĞÂÔöÈÕÀúÊÓÍ¼¡¢ÑµÁ·¼ÆÊ±Æ÷¡¢ÏêÇéÒ³±à¼­¹¦ÄÜ |
+| v1.0.0 (RN) | 2026-06-04 | åˆç‰ˆï¼šExpo/React Nativeï¼Œè®­ç»ƒè®°å½•+åŠ¨ä½œåº“+ç»Ÿè®¡+è®¾ç½® |
+| v1.1.0 (RN) | 2026-06-04 | æ–°å¢æ—¥å†è§†å›¾ã€è®­ç»ƒè®¡æ—¶å™¨ã€è¯¦æƒ…é¡µç¼–è¾‘ï¼ˆExpo ç‰ˆï¼‰ |
+| v1.1.0 (Web) | 2026-06-07 | è¿ç§»ä¸ºçº¯ Web ç‰ˆï¼ˆVite + Reactï¼‰ï¼ŒåŠŸèƒ½å¯¹é½ RN ç‰ˆ |
+| v1.1.0-deploy | 2026-06-07 | GitHub Pages ä¸Šçº¿ï¼Œä¿®å¤ base path + homepage URL |
 
 ---
 
-## ×îĞÂ APK ÏÂÔØ
+## å°æŠ€å·§
 
-| °æ±¾ | ¹¹½¨ID | ÏÂÔØÁ´½Ó | Íê³ÉÊ±¼ä |
-|------|--------|---------|---------|
-| v1.1.0 (ÈÕÀú+¼ÆÊ±Æ÷+±à¼­) | 0fef1b4c | [ÏÂÔØ APK](https://expo.dev/artifacts/eas/2Y81h7w3EykQATfYFxoHuj.apk) | 2026-06-04 22:19 |
-
-### °²×°·½Ê½
-1. ÔÚÊÖ»úä¯ÀÀÆ÷´ò¿ªÉÏÃæµÄÏÂÔØÁ´½Ó
-2. ÏÂÔØ .apk ÎÄ¼ş
-3. µã»÷°²×°£¨Èç¹ûÌáÊ¾"Î´ÖªÀ´Ô´"£¬ÔÚÉèÖÃÖĞÔÊĞí£©
-4. ¸²¸Ç°²×°²»»á¶ªÊ§Ô­ÓĞÑµÁ·Êı¾İ
+- æ•°æ®å­˜å‚¨åœ¨æµè§ˆå™¨ localStorage ä¸­ï¼Œæ¸…é™¤æµè§ˆå™¨æ•°æ®ä¼šä¸¢å¤±è®°å½•
+- ä¸åŒè®¾å¤‡/æµè§ˆå™¨ä¹‹é—´æ•°æ®ä¸äº’é€šï¼ˆçº¯å‰ç«¯æ–¹æ¡ˆï¼‰
+- ä¸»é¢˜è‰²ï¼šæ©™è‰² `#E65100`
+- å•å…ƒç±»å‹å†³å®šäº† SetRecord ä¸­è®°å½•çš„å­—æ®µï¼š`reps`â†’actual, `seconds`â†’seconds, `made_attempts`â†’made/attempts
